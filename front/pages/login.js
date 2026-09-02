@@ -5,7 +5,7 @@ import { Row, Col, Form, Input, Button, Spin, message } from "antd";
 import { useRouter } from "next/router";   //3. 경로
 import { loginRequest } from "../reducers/authReducer";
 
-const API_BASE_URL = NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080";
 
 //2+3. 부품+export
 export default function LoginPage() {  

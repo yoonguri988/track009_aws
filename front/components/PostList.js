@@ -4,7 +4,7 @@ import { Card, Button, Popconfirm, Image, Carousel } from 'antd';
 import  Link                        from 'next/link';
 
 // ## 환경변수 또는 도메인 주소 설정
-const API_BASE_URL = NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080";
 
 export default function PostList({ posts = [], handleEdit, handleDelete }) {
 

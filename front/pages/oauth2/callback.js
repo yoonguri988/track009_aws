@@ -7,7 +7,7 @@ import axios from "axios";
 // String targetUrl = redirectUrl + "?accessToken=" + access;   // 쿼리스트링
 //2. 부품 + export
 
-const API_BASE_URL = NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8080";
 
 
 export default function OAuth2CallbackPapge(){
