@@ -22,7 +22,17 @@ function AppLayout({  children , initialUser  }){   //★ 대체부품, 초기�
     const dispatch     = useDispatch();
     const {user}       = useSelector((state)=> state.auth); 
     
-    const handleLogout = ()=>{   dispatch(logoutRequest());   router.replace('/login');  };  // 디스패치(logoutRequest()) / 경로 login 넘기기   //##
+    const handleLogout = (e)=>{  
+        if(e && e.preventDefault) e.preventDefault();
+        dispatch(logoutRequest()); 
+        // router.replace('/login'); 
+        if(typeof window !== 'undefined'){
+            localStorage.removeItem('accessToken');
+            sessionStorage.clear();
+            window.location.href='/login';
+        }
+    };  // 디스패치(logoutRequest()) / 경로 login 넘기기   //##
+
 
     const menuItems = [
        ...( user  &&  user.nickname
