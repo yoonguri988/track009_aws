@@ -49,3 +49,8 @@ file:
 
 #server:
 #  port: 8484
+
+# https://jjeong98v1.duckdns.org
+# 프록시서버(nginx), 프록시가 전달해준 https 헤더정보 어떻게 처리할 것인지
+server:
+  forward-headers-strategy: native
